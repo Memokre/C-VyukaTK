@@ -1,20 +1,30 @@
 #include <iostream>
 using namespace std;
 
+void swaperoo(int* aPtr, int* bPtr) {
+    int temp = *aPtr;
+    *aPtr = *bPtr;
+    *bPtr = temp;
+}
+
 int main() {
-    int a = 1;
-    int b = 0;
-    cout << a << "   " << b;
+    int a, b;
+
+
+    cout << "Zadaj A: ";
+    cin >> a;
+    cout << "Tiez B: ";
+    cin >> b;
+
+    cout << "Hodnoty a a b su: " << a << "   " << b << endl;
 
     int* aPtr = &a;
     int* bPtr = &b;
 
-    int temp = *aPtr; 
-    *aPtr = *bPtr;   
-    *bPtr = temp;     
+  
+    swaperoo(aPtr, bPtr);
 
-    cout << " \n";
-    cout << a << "   " << b;
+    cout << "Po swape je a a b: " << a << "   " << b;
 
     return 0;
 }
